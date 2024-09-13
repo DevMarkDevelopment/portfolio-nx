@@ -22,7 +22,10 @@
             "input": "apps/front/public"
           }
         ],
-        "styles": ["apps/front/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/magenta-violet.css",
+          "apps/front/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
