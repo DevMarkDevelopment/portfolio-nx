@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDepositComponent } from './add-deposit/add-deposit.component';
 
 @Component({
   selector: 'app-deposit',
@@ -7,4 +8,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './deposit.component.html',
   styleUrl: './deposit.component.scss',
 })
-export class DepositComponent {}
+export class DepositComponent {
+  constructor(private dialogService: MatDialog) {
+  }
+
+  addDeposit() {
+    this.dialogService.open(AddDepositComponent);
+
+  }
+}

@@ -1,0 +1,19 @@
+.header {
+  color: #FFFFFF;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 32px 0 16px 16px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px;
+}

@@ -1,7 +1,21 @@
 {
+  "arrowParens": "always",
+  "printWidth": 140,
+  "quoteProps": "consistent",
   "singleQuote": true,
-  "semi": true,
-  "printWidth": 80,
+  "trailingComma": "all",
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "semi": true,
+  "bracketSpacing": true,
+  "attributeGroups": [
+    "$ANGULAR_STRUCTURAL_DIRECTIVE",
+    "$ANGULAR_ELEMENT_REF",
+    "$DEFAULT",
+    "$ANGULAR_INPUT",
+    "$ANGULAR_TWO_WAY_BINDING",
+    "$ANGULAR_OUTPUT"
+  ],
+  "attributeSort": "ASC",
+  "endOfLine": "auto",
+  "plugins": ["prettier-plugin-organize-attributes"]
 }
