@@ -1,0 +1,140 @@
+@mixin customTransition($type) {
+  transition: $type 0.5s ease;
+}
+
+@mixin customAnimation($time) {
+  animation: showText $time ease;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+
+  .sidebar {
+    background: #2d262b;
+    height: 100%;
+    width: 370px;
+    @include customTransition(width);
+
+    &.small {
+      width: 56px;
+      @include customTransition(width);
+
+      .sidebar__list-parent {
+        @include customTransition(padding);
+
+        .title {
+          padding: 8px 8px;
+
+          &__name {
+            display: none;
+          }
+        }
+
+        .element {
+          padding: 10px 0;
+
+          &__operation-name {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 8px;
+
+      mat-icon {
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+          background: #493b45;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &__list-parent {
+      @include customTransition(padding);
+
+      span, h6 {
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        color: #d1c2cb;
+      }
+
+      .title {
+        padding: 8px 16px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        background: #1f1a1d;
+
+        &__icon {
+          font-size: 40px;
+          height: 40px;
+          width: 40px;
+          color: white;
+        }
+
+        &__name {
+          font-size: 18px;
+          @include customAnimation(0.5s)
+        }
+      }
+
+      .element {
+        padding: 10px 32px;
+        margin: 8px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:hover {
+          cursor: pointer;
+          background: #493b45;
+        }
+
+        mat-icon {
+          font-size: 40px;
+          height: 40px;
+          width: 40px;
+          color: white;
+        }
+
+        &__operation-name {
+          font-size: 16px;
+          @include customAnimation(0.5s)
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes showText {
+  0% {
+    display: none;
+  }
+  99% {
+    display: none;
+  }
+  100% {
+    display: flex;
+  }
+
+}
+
+
