@@ -3,34 +3,20 @@
     <div class='sidebar__header'>
       <mat-icon fontIcon='menu' (click)='toggleSidebar()'></mat-icon>
     </div>
-    <div class='sidebar__list-parent'>
-      <a class='sidebar__list-parent title'>
-        <mat-icon class='sidebar__list-parent title__icon' fontIcon='close'></mat-icon>
-        <span class='sidebar__list-parent title__name'>Fiat operations</span>
-      </a>
-      <a class='sidebar__list-parent element' routerLink='/deposit'>
-        <mat-icon fontIcon='home'></mat-icon>
-        <span class='sidebar__list-parent element__operation-name'>Deposit money</span>
-      </a>
-      <a class='sidebar__list-parent element'>
-        <mat-icon aria-hidden='false' aria-label='Example home icon' fontIcon='home'></mat-icon>
-        <span class='sidebar__list-parent element__operation-name'>Withdraw money</span>
-      </a>
-    </div>
-    <div class='sidebar__list-parent'>
-      <a class='sidebar__list-parent title'>
-        <mat-icon class='sidebar__list-parent title__icon' fontIcon='close'></mat-icon>
-        <span class='sidebar__list-parent title__name'>Crypto operations (TODO)</span>
-      </a>
-      <a class='sidebar__list-parent element'>
-        <mat-icon aria-hidden='false' aria-label='Example home icon' fontIcon='home'></mat-icon>
-        <span class='sidebar__list-parent element__operation-name'>Add transaction</span>
-      </a>
-      <a class='sidebar__list-parent element'>
-        <mat-icon aria-hidden='false' aria-label='Example home icon' fontIcon='home'></mat-icon>
-        <span class='sidebar__list-parent element__operation-name'>Delete transaction</span>
-      </a>
-    </div>
+    @for (element of sidebarContent; track element.parent.title) {
+      <div class='sidebar__list-parent'>
+        <a class='sidebar__list-parent title'>
+          <mat-icon class='sidebar__list-parent title__icon' [fontIcon]='element.parent.icon'></mat-icon>
+          <span class='sidebar__list-parent title__name'>{{ element.parent.title }}</span>
+        </a>
+        @for (children of element.parent.children; track children.name) {
+          <a class='sidebar__list-parent element' [routerLink]='children.routerLink'>
+            <mat-icon [fontIcon]='children.icon'></mat-icon>
+            <span class='sidebar__list-parent element__operation-name'>{{ children.name }}</span>
+          </a>
+        }
+      </div>
+    }
   </div>
   <div class='right-side'>
     <ng-content></ng-content>
