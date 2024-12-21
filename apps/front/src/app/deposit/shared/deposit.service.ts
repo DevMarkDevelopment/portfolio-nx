@@ -13,4 +13,8 @@ export class DepositService {
 
     return this.http.post(`${this.url}`, { ...deposit, category: 'frontTest' });
   }
+
+  getDeposits(): Observable<any> {
+    return this.http.get<any[]>(`${this.url}`);
+  }
 }

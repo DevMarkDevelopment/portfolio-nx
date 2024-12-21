@@ -13,16 +13,35 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DepositService } from './shared/deposit.service';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ShowDepositsComponent } from './show-deposits/show-deposits.component';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow,
+  MatHeaderRowDef,
+  MatRow,
+  MatRowDef,
+  MatTable,
+} from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 const routes: Routes = [
   {
     path: '',
     component: DepositComponent,
   },
+  {
+    path: 'showDepositHistory',
+    component: ShowDepositsComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [DepositComponent, AddDepositComponent],
+  declarations: [DepositComponent, AddDepositComponent, ShowDepositsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -37,6 +56,18 @@ const routes: Routes = [
     MatNativeDateModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatTable,
+    MatSort,
+    MatColumnDef,
+    MatHeaderCell,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatCell,
+    MatPaginator,
+    MatHeaderRow,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatRow,
   ],
   providers: [DepositService],
 })

@@ -13,8 +13,10 @@ a:-webkit-any-link {
 .content {
   display: flex;
   height: 100%;
+  background: #1e1a1d;
 
   .sidebar {
+    border-top: 1px solid #d1c2cb;
     background: #2d262b;
     height: 100%;
     width: 370px;
@@ -136,5 +138,4 @@ a:-webkit-any-link {
   }
 
 }
-
 
