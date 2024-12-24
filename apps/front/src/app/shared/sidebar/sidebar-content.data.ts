@@ -4,20 +4,24 @@ export const SidebarContentData: ISidebarContent[] =
   [{
     parent: {
       title: 'Fiat operations',
-      icon: 'home',
+      icon: 'payments',
       children: [{
         name: 'Deposit money',
-        icon: 'close',
+        icon: 'attach_money',
         routerLink: '/deposit',
       }, {
         name: 'Withdraw money',
-        icon: 'home',
+        icon: 'money_off',
+      }, {
+        name: 'Show deposits',
+        icon: 'history',
+        routerLink: '/deposit/showDepositHistory',
       }],
     },
   }, {
     parent: {
       title: 'Cryptocurrencies (TODO)',
-      icon: 'home',
+      icon: 'currency_bitcoin',
       children: [{
         name: 'Add transaction',
         icon: 'add',
