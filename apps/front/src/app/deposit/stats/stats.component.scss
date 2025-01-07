@@ -1,0 +1,23 @@
+.stats {
+  background: #2d262b;
+
+  &__title {
+    color: white;
+    font-size: 16px;
+  }
+
+  &__element {
+    font-size: 14px;
+    font-style: italic;
+    color: #d1c2cb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #d1c2cb;
+    height: 32px;
+    padding: 0 16px;
+    align-items: center;
+  }
+
+}

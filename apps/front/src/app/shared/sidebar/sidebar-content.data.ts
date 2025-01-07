@@ -16,6 +16,10 @@ export const SidebarContentData: ISidebarContent[] =
         name: 'Show deposits',
         icon: 'history',
         routerLink: '/deposit/showDepositHistory',
+      }, {
+        name: 'Stats (In progress)',
+        icon: 'history',
+        routerLink: '/deposit/stats',
       }],
     },
   }, {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Deposit } from '../../../../../libs/deposit.interface';
 
 @Injectable()
 export class DepositService {
@@ -14,7 +15,7 @@ export class DepositService {
     return this.http.post(`${this.url}`, { ...deposit, category: 'frontTest' });
   }
 
-  getDeposits(): Observable<any> {
-    return this.http.get<any[]>(`${this.url}`);
+  getDeposits(): Observable<Deposit[]> {
+    return this.http.get<Deposit[]>(`${this.url}`);
   }
 }
