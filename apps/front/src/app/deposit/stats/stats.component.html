@@ -1,0 +1,12 @@
+<div class='stats'>
+  <h3 class='stats__title'>Deposit - stats</h3>
+
+  @for (element of statsData; track element.title) {
+    <div class='stats__element'>
+      <div class='stats__element-title'>
+        {{ element.title }}
+      </div>
+      <div class='stats__element-value'>{{ element.data() }}</div>
+    </div>
+  }
+</div>

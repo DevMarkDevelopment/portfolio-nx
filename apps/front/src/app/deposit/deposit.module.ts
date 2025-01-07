@@ -28,6 +28,7 @@ import {
 } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { StatsComponent } from './stats/stats.component';
 
 const routes: Routes = [
   {
@@ -38,10 +39,14 @@ const routes: Routes = [
     path: 'showDepositHistory',
     component: ShowDepositsComponent,
   },
+  {
+    path: 'stats',
+    component: StatsComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [DepositComponent, AddDepositComponent, ShowDepositsComponent],
+  declarations: [DepositComponent, AddDepositComponent, ShowDepositsComponent, StatsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
