@@ -29,6 +29,8 @@ import {
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { StatsComponent } from './stats/stats.component';
+import { DepositsChartComponent } from './deposits-chart/deposits-chart.component';
+import { UIChart } from 'primeng/chart';
 
 const routes: Routes = [
   {
@@ -43,10 +45,14 @@ const routes: Routes = [
     path: 'stats',
     component: StatsComponent,
   },
+  {
+    path: 'history-chart',
+    component: DepositsChartComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [DepositComponent, AddDepositComponent, ShowDepositsComponent, StatsComponent],
+  declarations: [DepositComponent, AddDepositComponent, ShowDepositsComponent, StatsComponent, DepositsChartComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -73,6 +79,7 @@ const routes: Routes = [
     MatHeaderRowDef,
     MatRowDef,
     MatRow,
+    UIChart,
   ],
   providers: [DepositService],
 })
