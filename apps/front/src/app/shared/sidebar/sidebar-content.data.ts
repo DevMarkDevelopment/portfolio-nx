@@ -17,9 +17,14 @@ export const SidebarContentData: ISidebarContent[] =
         icon: 'history',
         routerLink: '/deposit/showDepositHistory',
       }, {
-        name: 'Stats (In progress)',
+        name: 'Stats',
         icon: 'history',
         routerLink: '/deposit/stats',
+      }, {
+        name: 'History chart',
+        icon:
+          'stacked_line_chart',
+        routerLink: '/deposit/history-chart',
       }],
     },
   }, {
